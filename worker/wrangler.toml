@@ -1,0 +1,20 @@
+name = "cardscanner-api"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+# Your Firebase project id — the Worker only accepts tokens issued for it.
+FIREBASE_PROJECT_ID = "card-scanner-b26ec"
+
+# Comma separated. Leave empty to allow any origin (not recommended once live).
+ALLOWED_ORIGINS = "https://mapl03.github.io"
+
+# Lookups per user per day, counted by this Worker on top of Google's own free
+# quota. Keep it low: Google's free tier is shared across everyone using the
+# key, so one person scanning a shoebox exhausts it for the whole group.
+DAILY_LIMIT = "25"
+
+# Uncomment after: npx wrangler kv namespace create QUOTA
+# [[kv_namespaces]]
+# binding = "QUOTA"
+# id = "PASTE_KV_NAMESPACE_ID"
